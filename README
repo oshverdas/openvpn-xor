@@ -14,39 +14,12 @@ The binary can be found at ./src/openvpn/openvpn
 
 If configure fails with
     configure: error: libpam required but missing
-Configure without libpam
+Either install libpam-dev or onfigure to build without libpam
     ./configure --disable-plugin-auth-pam
 
 Building on Windows
 
-Download and install git
-https://git-scm.com/downloads/win
-
-Download and install "Build Tools for Visual Studio 2022"
-https://visualstudio.microsoft.com/downloads/
-Run "Visual Studio Installer"
-Enable "C++/CLI support for ..."
-In "Individual Components" type "x64 spectre"
-Enable "MSVC ... x64/x86 Spectre-mitigated libs"
-
-Download and install CMake
-https://cmake.org/download/
-
-Download and install python
-https://www.python.org/downloads/
-Tick "Add python to environment variables"
-Run cmd
-    pip install docutils
-
-Build commands:
-    mkdir C:\openvpn
-    cd C:\openvpn
-    git clone https://github.com/microsoft/vcpkg.git
-    git clone https://github.com/oshverdas/openvpn-xor.git
-    set VCPKG_ROOT=C:\openvpn\vcpkg
-    cd openvpn-xor
-    cmake --preset win-amd64-release
-    cmake --build --preset win-amd64-release
+Build using GitHub Action "Build" in https://github.com/oshverdas/openvpn-build-xor
 
 *************************************************************************
 
